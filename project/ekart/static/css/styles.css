@@ -1,0 +1,12 @@
+.product-image-wrapper {
+  height: 200px;
+  overflow: hidden;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.product-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

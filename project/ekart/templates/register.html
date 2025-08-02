@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<style>
+  html, body {
+    height: 100%;
+  }
+
+  .full-height-container {
+    height: calc(80vh - 56px - 40px); /* Subtract navbar & footer height if needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+  }
+</style>
+
+<div class="full-height-container">
+  <div class="container" style="max-width: 500px; width: 100%;">
+    <div class="bg-white p-4 border rounded shadow">
+
+      <h2 class="text-center mb-4">Sign Up</h2>
+
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="form-floating mb-3">
+          {{ form.username }}
+          <label>Username</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          {{ form.email }}
+          <label>Email</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          {{ form.password }}
+          <label>Password</label>
+        </div>
+
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-success">Sign Up</button>
+        </div>
+
+        <div class="text-center mt-3">
+          <a href="{% url 'signin' %}">Already have an account? Sign in here</a>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
